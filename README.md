@@ -6,6 +6,15 @@ Widget made with Vanilla JavaScript to be imported into Leche NIDO website.
 
 ## 📖 How-to
 
+Widget main object in DOM (`leche-nido-widget`) will show selected product by the user to show the correct slide in `data-` attribute.
+
+`
+
+<div id="leche-nido-widget" data-current-selected="product-selected-goes-here">
+  ...
+</div>
+`
+
 ### Required files:
 
 Files used by backend:
