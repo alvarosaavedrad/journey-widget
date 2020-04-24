@@ -4,10 +4,21 @@
 
 (() => {
   /**
-   * Data
+   * Add widget texts here ❕❕❕
    */
 
-  const data = {};
+  const content = {
+    title: "¡Mamá!",
+    subtitle: "Selecciona la edad de tu hijo y encuentra la Leche NIDO que es para él.",
+
+    "floating-message": "Por su edad debe tomar",
+
+    "label-nido-etapa-1": "1+ (1 a 3 años)",
+    "label-nido-etapa-3": "3+ (3 a 5 años)",
+    "label-nido-etapa-5": "5+ (5 a 7 años)",
+    "label-nido-etapa-escolar": "ETAPA ESCOLAR (7 a más años)",
+    "label-nido-todas-las-edades": "TODAS LAS EDADES",
+  };
 
   /**
    * View Object
@@ -19,7 +30,7 @@
       texts: document.querySelector(".leche-nido-widget__texts"),
       timeline: {
         main: document.querySelector(".leche-nido-widget__timeline"),
-        message: `<div class="timeline__message"><p class="noselect">Por su edad debe tomar</p><span class="timeline__message-tail"></span></div>`,
+        message: `<div class="timeline__message"><p class="noselect"></p><span class="timeline__message-tail"></span></div>`,
         spanContainer: document.querySelector(".timeline__span-container"),
         list: document.querySelector(".timeline__list"),
         timeline: document.querySelector(".timeline__main"),
@@ -54,7 +65,9 @@
   };
 
   /**
-   * Model
+   * - Global Object -
+   * Adding 'lecheNido' to browser's window object
+   * to allow global access to 'currentSelected'
    */
 
   window.lecheNido = {
@@ -62,6 +75,10 @@
       currentSelected: "",
     },
   };
+
+  /**
+   * Model
+   */
 
   const model = {
     etapas: ["nido-etapa-1", "nido-etapa-3", "nido-etapa-5", "etapa-escolar", "todas-las-edades"],
@@ -171,6 +188,12 @@
   circles.forEach((circle) => {
     circle.addEventListener("click", circleOnClick);
   });
+
+  /**
+   * Setting texts
+   */
+
+  // TODO
 
   /**
    * Init
