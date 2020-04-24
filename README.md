@@ -8,10 +8,12 @@ Widget made with Vanilla JavaScript to be imported in Leche NIDO website.
 
 ### Required files:
 
-- `src/index.html`
-- `src/js/index.js`
-- `src/css/style.css`
+Use these files into Drupal:
 
-### Prepared for Content Manager
+- HTML `src/index.html`
+- JavaScript `src/js/index.js`
+- CSS `src/css/style.css`
+
+### Content Manager
 
 Widget texts should be added by using the 'content' object at the begining of `src/js/index.js` file.
