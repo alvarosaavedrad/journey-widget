@@ -175,6 +175,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   color: white;
+  cursor: initial;
   font-size: 14px;
   font-weight: bold;
   padding: 4px 8px;
@@ -211,6 +212,10 @@ body {
   background-color: orange;
 }
 
+.timeline__circle__etapa-escolar > p {
+  width: 128px;
+}
+
 .timeline__circle__etapa-escolar > p > span {
   color: orange !important;
 }
@@ -224,4 +229,13 @@ body {
   border-radius: 50%;
   height: 12px;
   width: 12px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }

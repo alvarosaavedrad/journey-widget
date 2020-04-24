@@ -19,7 +19,7 @@
       texts: document.querySelector(".leche-nido-widget__texts"),
       timeline: {
         main: document.querySelector(".leche-nido-widget__timeline"),
-        message: `<div class="timeline__message"><p>Por su edad debe tomar</p><span class="timeline__message-tail"></span></div>`,
+        message: `<div class="timeline__message"><p class="noselect">Por su edad debe tomar</p><span class="timeline__message-tail"></span></div>`,
         spanContainer: document.querySelector(".timeline__span-container"),
         list: document.querySelector(".timeline__list"),
         timeline: document.querySelector(".timeline__main"),
