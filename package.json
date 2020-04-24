@@ -1,0 +1,18 @@
+{
+  "name": "leche-nido-widget",
+  "version": "0.1.0",
+  "description": "Custom widget for Leche NIDO project made with Vanilla JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvarosaavedrad/leche-nido-widget.git"
+  },
+  "author": "Álvaro Saavedra",
+  "bugs": {
+    "url": "https://github.com/alvarosaavedrad/leche-nido-widget/issues"
+  },
+  "homepage": "https://github.com/alvarosaavedrad/leche-nido-widget#readme"
+}

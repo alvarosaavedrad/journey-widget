@@ -1,5 +1,5 @@
 /**
- * Leche Nido Widget Controller
+ * Leche NIDO Widget Controller
  */
 
 (() => {
@@ -167,8 +167,6 @@
   const standardCircles = Array.from(document.querySelectorAll(".timeline__circle"));
   const smallCircles = Array.from(document.querySelectorAll(".timeline__circle__small"));
   const circles = standardCircles.concat(smallCircles);
-
-  console.log(circles);
 
   circles.forEach((circle) => {
     circle.addEventListener("click", circleOnClick);

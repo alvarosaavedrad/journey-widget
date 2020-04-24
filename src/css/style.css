@@ -4,7 +4,7 @@
  *   Red: #e03130
  *   Green: #299f3f
  *   Blue: #328bcd
-*/
+ */
 
 * {
   margin: 0;
@@ -238,4 +238,49 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+/**
+ * Pasted from sass exports
+ */
+
+/* list-items */
+.timeline__list > ul > li:nth-child(1) {
+  background-color: rgba(0, 0, 0, 0.0833333333);
+}
+
+.timeline__list > ul > li:nth-child(2) {
+  background-color: rgba(0, 0, 0, 0.1666666667);
+}
+
+.timeline__list > ul > li:nth-child(3) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.timeline__list > ul > li:nth-child(4) {
+  background-color: rgba(0, 0, 0, 0.3333333333);
+}
+
+.timeline__list > ul > li:nth-child(5) {
+  background-color: rgba(0, 0, 0, 0.4166666667);
+}
+
+.timeline__list > ul > li:nth-child(6) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.timeline__list > ul > li:nth-child(7) {
+  background-color: rgba(0, 0, 0, 0.5833333333);
+}
+
+.timeline__list > ul > li:nth-child(8) {
+  background-color: rgba(0, 0, 0, 0.6666666667);
+}
+
+.timeline__list > ul > li:nth-child(9) {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.timeline__list > ul > li:nth-child(10) {
+  background-color: rgba(0, 0, 0, 0.8333333333);
 }
