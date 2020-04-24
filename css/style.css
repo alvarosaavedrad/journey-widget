@@ -16,7 +16,7 @@ body {
 }
 
 /* Widget */
-#leche-nido-widget {
+.leche-nido-widget__container__home {
   background-color: #fef200;
   display: flex;
   flex-direction: row;
@@ -105,23 +105,50 @@ body {
 .timeline__message {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  max-height: 54px;
-  max-width: 100px;
+  left: 50%;
   padding: 8px 16px;
   position: absolute;
+  top: 50%;
+  transform: translate(-50%, -96px);
+  width: 100px;
+}
+
+.timeline__message > p {
+  color: white;
+  font-weight: bold;
   text-align: center;
-  transform: translateX(-40%) translateY(-150%);
 }
 
 .timeline__message-tail {
   background-color: rgba(0, 0, 0, 0.2);
-  width: 20px;
-  height: 20px;
-  position: fixed;
-  transform: translateX(-50%) translateY(40%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+  height: 20px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(26px);
+  width: 20px;
+}
+
+.timeline__line,
+.timeline__dot {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 16px;
+}
+
+.timeline__line {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 10px;
+  position: relative;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.timeline__circle-container {
+  align-self: center;
+  position: relative;
 }
 
 .timeline__circle {
@@ -129,7 +156,7 @@ body {
   cursor: pointer;
   height: 24px;
   width: 24px;
-  transition: all 300ms;
+  /* transition: all 300ms; */
 }
 
 /* .timeline__circle:hover {
@@ -139,6 +166,7 @@ body {
 
 .timeline__circle__small {
   border-radius: 50%;
+  cursor: pointer;
   height: 16px;
   width: 16px;
 }
@@ -190,21 +218,6 @@ body {
 .timeline__circle__todas-las-edades {
   background-color: white;
   margin-left: 16px;
-}
-
-.timeline__line,
-.timeline__dot {
-  background-color: rgba(0, 0, 0, 0.2);
-  margin: 0 16px;
-}
-
-.timeline__line {
-  align-items: center;
-  border-radius: 5px;
-  display: flex;
-  height: 10px;
-  justify-content: space-between;
-  width: 65%;
 }
 
 .timeline__dot {

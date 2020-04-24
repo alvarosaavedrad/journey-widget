@@ -4,6 +4,12 @@
 
 (() => {
   /**
+   * Data
+   */
+
+  const data = {};
+
+  /**
    * View Object
    */
 
@@ -19,38 +25,28 @@
         timeline: document.querySelector(".timeline__main"),
         circles: {
           "nido-etapa-1": {
-            main: document.querySelector(
-              ".timeline__circle.timeline__circle__nido-etapa-1"
-            ),
+            main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-1"),
             small: document.querySelector(
               ".timeline__circle__small.timeline__circle__nido-etapa-1"
             ),
           },
           "nido-etapa-3": {
-            main: document.querySelector(
-              ".timeline__circle.timeline__circle__nido-etapa-3"
-            ),
+            main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-3"),
             small: document.querySelector(
               ".timeline__circle__small.timeline__circle__nido-etapa-3"
             ),
           },
           "nido-etapa-5": {
-            main: document.querySelector(
-              ".timeline__circle.timeline__circle__nido-etapa-5"
-            ),
+            main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-5"),
             small: document.querySelector(
               ".timeline__circle__small.timeline__circle__nido-etapa-5"
             ),
           },
           "etapa-escolar": {
-            main: document.querySelector(
-              ".timeline__circle.timeline__circle__etapa-escolar"
-            ),
+            main: document.querySelector(".timeline__circle.timeline__circle__etapa-escolar"),
           },
           "todas-las-edades": {
-            main: document.querySelector(
-              ".timeline__circle.timeline__circle__todas-las-edades"
-            ),
+            main: document.querySelector(".timeline__circle.timeline__circle__todas-las-edades"),
           },
         },
       },
@@ -68,34 +64,29 @@
   };
 
   const model = {
-    etapas: [
-      "nido-etapa-1",
-      "nido-etapa-3",
-      "nido-etapa-5",
-      "etapa-escolar",
-      "todas-las-edades",
-    ],
+    etapas: ["nido-etapa-1", "nido-etapa-3", "nido-etapa-5", "etapa-escolar", "todas-las-edades"],
   };
 
   /**
    * Controllers
    */
 
-  const getAgeFromListItem = (e) => {
-    const age = e.target.textContent;
-    return parseInt(age, 10);
+  const circleOnClick = (e) => {
+    // Getting age and parsing it to int
+    const age = e.target.dataset.age.indexOf(",") === -1 ? parseInt(e.target.dataset.age) : 7;
+    selectContent(age);
   };
 
   const insertMessage = (age, selected) => {
     const type = age === 2 || age === 4 || age === 6 ? "small" : "main";
 
     if (view.lecheNido.timeline.circles[selected][type]) {
-      const msg = view.lecheNido.timeline.circles[selected][type].querySelector(
+      const msg = view.lecheNido.timeline.circles[selected][type].parentElement.querySelector(
         ".timeline__message"
       );
 
       if (!msg) {
-        view.lecheNido.timeline.circles[selected][type].insertAdjacentHTML(
+        view.lecheNido.timeline.circles[selected][type].parentElement.insertAdjacentHTML(
           "afterbegin",
           view.lecheNido.timeline.message
         );
@@ -105,23 +96,8 @@
 
   const listItemOnClick = (e) => {
     // Getting age and parsing it to int
-    const age = getAgeFromListItem(e);
-
-    // Set span
-    view.lecheNido.timeline.spanContainer.querySelector(
-      "span"
-    ).textContent = age;
-
-    // Mathcing age with etapas
-    const currentSelected = matchSelection(age);
-
-    // Show message over selected circle
-    removeMessage(age, currentSelected);
-    insertMessage(age, currentSelected);
-
-    // Setting currentSelected in dataset attribute and global window object
-    window.lecheNido.widget.currentSelected = currentSelected;
-    view.lecheNido.widget.dataset.currentSelected = currentSelected;
+    const age = parseInt(e.target.textContent, 10);
+    selectContent(age);
   };
 
   const matchSelection = (age) => {
@@ -147,7 +123,7 @@
 
     Object.keys(view.lecheNido.timeline.circles).forEach((key) => {
       Object.keys(view.lecheNido.timeline.circles[key]).forEach((subkey) => {
-        const msg = view.lecheNido.timeline.circles[key][subkey].querySelector(
+        const msg = view.lecheNido.timeline.circles[key][subkey].parentElement.querySelector(
           ".timeline__message"
         );
 
@@ -160,14 +136,42 @@
     });
   };
 
+  const selectContent = (age) => {
+    // Set span
+    view.lecheNido.timeline.spanContainer.querySelector("span").textContent = age;
+
+    // Mathcing age with etapas
+    const currentSelected = matchSelection(age);
+
+    // Show message over selected circle
+    removeMessage(age, currentSelected);
+    insertMessage(age, currentSelected);
+
+    // Setting currentSelected in dataset attribute and global window object
+    window.lecheNido.widget.currentSelected = currentSelected;
+    view.lecheNido.widget.dataset.currentSelected = currentSelected;
+  };
+
   /**
    * Adding Events
    */
 
+  // List Items
   const listItems = Array.from(document.querySelectorAll(".timeline__list li"));
 
   listItems.forEach((li) => {
     li.addEventListener("click", listItemOnClick);
+  });
+
+  // Timeline circles
+  const standardCircles = Array.from(document.querySelectorAll(".timeline__circle"));
+  const smallCircles = Array.from(document.querySelectorAll(".timeline__circle__small"));
+  const circles = standardCircles.concat(smallCircles);
+
+  console.log(circles);
+
+  circles.forEach((circle) => {
+    circle.addEventListener("click", circleOnClick);
   });
 
   /**
