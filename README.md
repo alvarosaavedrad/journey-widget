@@ -2,7 +2,7 @@
 
 ## 🔖 Description
 
-Widget made with Vanilla JavaScript to be imported in Leche NIDO website.
+Widget made with Vanilla JavaScript to be imported into Leche NIDO website.
 
 ## 📖 How-to
 
