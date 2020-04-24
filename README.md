@@ -6,7 +6,7 @@ Widget made with Vanilla JavaScript to be imported into Leche NIDO website.
 
 ## 📖 How-to
 
-Widget main object in DOM (`leche-nido-widget`) will show selected product by the user in `data-current-selected` attribute in order to set the correct choice in other component. In addition, `lecheNido` object has been added to browser global `window` object with the same purpose.
+Widget main object in DOM (`leche-nido-widget`) will show selected product by the user in `data-current-selected` attribute in order to set the correct one in other component. In addition, `lecheNido` object has been added to browser global `window` object with the same purpose.
 
 ### Required files:
 
