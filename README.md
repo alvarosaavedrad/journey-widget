@@ -18,4 +18,4 @@ Files used by backend:
 
 ### Content Manager
 
-Widget texts should be added by using the 'content' object at the begining of `src/js/index.js` file.
+Widget texts should be added by using the `content` object at the begining of `src/js/index.js` file.
