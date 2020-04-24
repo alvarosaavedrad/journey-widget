@@ -4,7 +4,7 @@
 
 (() => {
   /**
-   * Add widget texts here ❕❕❕
+   * Add widget texts here
    */
 
   const content = {
@@ -21,7 +21,7 @@
   };
 
   /**
-   * View Object
+   * View
    */
 
   const view = {
@@ -30,7 +30,7 @@
       texts: document.querySelector(".leche-nido-widget__texts"),
       timeline: {
         main: document.querySelector(".leche-nido-widget__timeline"),
-        message: `<div class="timeline__message"><p class="noselect"></p><span class="timeline__message-tail"></span></div>`,
+        message: `<div class="timeline__message"><p class="noselect">${content["floating-message"]}</p><span class="timeline__message-tail"></span></div>`,
         spanContainer: document.querySelector(".timeline__span-container"),
         list: document.querySelector(".timeline__list"),
         timeline: document.querySelector(".timeline__main"),
@@ -65,7 +65,7 @@
   };
 
   /**
-   * - Global Object -
+   * - Global -
    * Adding 'lecheNido' to browser's window object
    * to allow global access to 'currentSelected'
    */
@@ -85,7 +85,7 @@
   };
 
   /**
-   * Controllers
+   * Controller
    */
 
   const circleOnClick = (e) => {
@@ -170,34 +170,43 @@
   };
 
   /**
-   * Adding Events
-   */
-
-  // List Items
-  const listItems = Array.from(document.querySelectorAll(".timeline__list li"));
-
-  listItems.forEach((li) => {
-    li.addEventListener("click", listItemOnClick);
-  });
-
-  // Timeline circles
-  const standardCircles = Array.from(document.querySelectorAll(".timeline__circle"));
-  const smallCircles = Array.from(document.querySelectorAll(".timeline__circle__small"));
-  const circles = standardCircles.concat(smallCircles);
-
-  circles.forEach((circle) => {
-    circle.addEventListener("click", circleOnClick);
-  });
-
-  /**
-   * Setting texts
-   */
-
-  // TODO
-
-  /**
    * Init
    */
 
-  insertMessage(1, "nido-etapa-1");
+  (function () {
+    /**
+     * Events
+     */
+
+    // List Items
+    const listItems = Array.from(document.querySelectorAll(".timeline__list li"));
+
+    listItems.forEach((li) => {
+      li.addEventListener("click", listItemOnClick);
+    });
+
+    // Timeline circles
+    const standardCircles = Array.from(document.querySelectorAll(".timeline__circle"));
+    const smallCircles = Array.from(document.querySelectorAll(".timeline__circle__small"));
+    const circles = standardCircles.concat(smallCircles);
+
+    circles.forEach((circle) => {
+      circle.addEventListener("click", circleOnClick);
+    });
+
+    /**
+     * Setting texts
+     */
+
+    view.lecheNido.texts.querySelector("h3").textContent = content.title;
+    view.lecheNido.texts.querySelector("p").textContent = content.subtitle;
+    document.querySelector(".timeline__circle__todas-las-edades p").textContent =
+      content["label-nido-todas-las-edades"];
+
+    /**
+     * Setting up message at init
+     */
+
+    insertMessage(1, "nido-etapa-1");
+  })();
 })();
