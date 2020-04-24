@@ -37,21 +37,15 @@
         circles: {
           "nido-etapa-1": {
             main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-1"),
-            small: document.querySelector(
-              ".timeline__circle__small.timeline__circle__nido-etapa-1"
-            ),
+            small: document.querySelector(".timeline__circle__small.timeline__circle__nido-etapa-1"),
           },
           "nido-etapa-3": {
             main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-3"),
-            small: document.querySelector(
-              ".timeline__circle__small.timeline__circle__nido-etapa-3"
-            ),
+            small: document.querySelector(".timeline__circle__small.timeline__circle__nido-etapa-3"),
           },
           "nido-etapa-5": {
             main: document.querySelector(".timeline__circle.timeline__circle__nido-etapa-5"),
-            small: document.querySelector(
-              ".timeline__circle__small.timeline__circle__nido-etapa-5"
-            ),
+            small: document.querySelector(".timeline__circle__small.timeline__circle__nido-etapa-5"),
           },
           "etapa-escolar": {
             main: document.querySelector(".timeline__circle.timeline__circle__etapa-escolar"),
@@ -66,7 +60,7 @@
 
   /**
    * - Global -
-   * Adding 'lecheNido' to browser's window object
+   * Adding 'lecheNido' to browser window object
    * to allow global access to 'currentSelected'
    */
 
@@ -98,9 +92,7 @@
     const type = age === 2 || age === 4 || age === 6 ? "small" : "main";
 
     if (view.lecheNido.timeline.circles[selected][type]) {
-      const msg = view.lecheNido.timeline.circles[selected][type].parentElement.querySelector(
-        ".timeline__message"
-      );
+      const msg = view.lecheNido.timeline.circles[selected][type].parentElement.querySelector(".timeline__message");
 
       if (!msg) {
         view.lecheNido.timeline.circles[selected][type].parentElement.insertAdjacentHTML(
@@ -140,9 +132,7 @@
 
     Object.keys(view.lecheNido.timeline.circles).forEach((key) => {
       Object.keys(view.lecheNido.timeline.circles[key]).forEach((subkey) => {
-        const msg = view.lecheNido.timeline.circles[key][subkey].parentElement.querySelector(
-          ".timeline__message"
-        );
+        const msg = view.lecheNido.timeline.circles[key][subkey].parentElement.querySelector(".timeline__message");
 
         if (key !== selected || (key === selected && subkey !== type)) {
           if (msg) {
@@ -164,9 +154,11 @@
     removeMessage(age, currentSelected);
     insertMessage(age, currentSelected);
 
-    // Setting currentSelected in dataset attribute and global window object
-    window.lecheNido.widget.currentSelected = currentSelected;
+    // Setting currentSelected in dataset attribute
     view.lecheNido.widget.dataset.currentSelected = currentSelected;
+
+    // Setting currentSelected in global window object
+    window.lecheNido.widget.currentSelected = currentSelected;
   };
 
   /**
