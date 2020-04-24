@@ -1,10 +1,10 @@
 /**
- * Leche NIDO Widget Controller
+ * Leche NIDO Widget
  */
 
 (() => {
   /**
-   * Add widget texts here
+   * Add widget texts here!
    */
 
   const content = {
@@ -170,7 +170,7 @@
      * Events
      */
 
-    // List Items
+    // List items
     const listItems = Array.from(document.querySelectorAll(".timeline__list li"));
 
     listItems.forEach((li) => {
