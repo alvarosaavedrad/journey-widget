@@ -8,7 +8,7 @@ Widget made with Vanilla JavaScript to be imported in Leche NIDO website.
 
 ### Required files:
 
-Use these files into Drupal:
+Files used by backend:
 
 - HTML `src/index.html`
 - JavaScript `src/js/index.js`
