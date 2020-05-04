@@ -50,4 +50,12 @@
   background-color: rgba(0, 0, 0, 0.8666666667);
 }
 
+.timeline__list > ul > li:nth-child(14) {
+  background-color: rgba(0, 0, 0, 0.9333333333);
+}
+
+.timeline__list > ul > li:nth-child(15) {
+  background-color: black;
+}
+
 /*# sourceMappingURL=list-items.css.map */

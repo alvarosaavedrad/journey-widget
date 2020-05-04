@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Styles -->
     <link rel="stylesheet" href="./css/bundle.css" />
 
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Title -->
     <title>🥛 Leche NIDO Widget 🥛</title>
   </head>
 
@@ -13,118 +22,53 @@
     <div id="leche-nido-widget" class="leche-nido-widget__container__home">
       <!-- Texts -->
       <div class="leche-nido-widget__texts">
-        <h3 class="noselect"></h3>
-
-        <p class="noselect"></p>
+        <h3 class="leche-nido-widget__texts-h3 noselect"></h3>
+        <p class="leche-nido-widget__texts-p noselect"></p>
       </div>
 
       <!-- Timeline -->
       <div class="leche-nido-widget__timeline">
+        <!-- Span -->
         <div class="timeline__span-container">
           <span class="noselect">1</span>
         </div>
 
+        <!-- List -->
         <div class="timeline__list">
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
+            <li data-relationship="a">X</li>
+            <li data-relationship="b">Y</li>
           </ul>
         </div>
 
+        <!-- Line & Dots -->
         <div class="timeline__main">
           <div class="timeline__line">
-            <!-- Nido Etapa 1 -->
+            <!-- Selectable Dot -->
             <div class="timeline__circle-container">
               <div class="timeline__message">
                 <p class="noselect">Click edit button to change this text.</p>
                 <span class="timeline__message-tail"></span>
               </div>
-              <div class="timeline__circle timeline__circle__nido-etapa-1" data-age="1">
+              <div class="timeline__circle" data-relationship="a">
                 <p class="noselect">Click edit button to change this text.</p>
               </div>
             </div>
 
+            <!-- Unselectable dot -->
+            <div class="timeline__dot"></div>
+            <div class="timeline__dot"></div>
+            <div class="timeline__dot"></div>
+
+            <!-- Selectable Dot -->
             <div class="timeline__circle-container">
               <div class="timeline__message">
                 <p class="noselect">Click edit button to change this text.</p>
                 <span class="timeline__message-tail"></span>
               </div>
-              <div class="timeline__circle__small timeline__circle__nido-etapa-1" data-age="2"></div>
-            </div>
-
-            <!-- Nido Etapa 3 -->
-            <div class="timeline__circle-container">
-              <div class="timeline__message">
-                <p class="noselect">Click edit button to change this text.</p>
-                <span class="timeline__message-tail"></span>
-              </div>
-              <div class="timeline__circle timeline__circle__nido-etapa-3" data-age="3">
+              <div class="timeline__circle" data-relationship="b">
                 <p class="noselect">Click edit button to change this text.</p>
               </div>
-            </div>
-
-            <div class="timeline__circle-container">
-              <div class="timeline__message">
-                <p class="noselect">Click edit button to change this text.</p>
-                <span class="timeline__message-tail"></span>
-              </div>
-              <div class="timeline__circle__small timeline__circle__nido-etapa-3" data-age="4"></div>
-            </div>
-
-            <!-- Nido Etapa 5 -->
-            <div class="timeline__circle-container">
-              <div class="timeline__message">
-                <p class="noselect">Click edit button to change this text.</p>
-                <span class="timeline__message-tail"></span>
-              </div>
-              <div class="timeline__circle timeline__circle__nido-etapa-5" data-age="5">
-                <p class="noselect">Click edit button to change this text.</p>
-              </div>
-            </div>
-
-            <div class="timeline__circle-container">
-              <div class="timeline__message">
-                <p class="noselect">Click edit button to change this text.</p>
-                <span class="timeline__message-tail"></span>
-              </div>
-              <div class="timeline__circle__small timeline__circle__nido-etapa-5" data-age="6"></div>
-            </div>
-
-            <!-- Nido Etapa Escolar -->
-            <div class="timeline__circle-container">
-              <div class="timeline__message">
-                <p class="noselect">Click edit button to change this text.</p>
-                <span class="timeline__message-tail"></span>
-              </div>
-              <div class="timeline__circle timeline__circle__etapa-escolar" data-age="7,8,9">
-                <p class="noselect">Click edit button to change this text.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline__dot"></div>
-          <div class="timeline__dot"></div>
-          <div class="timeline__dot"></div>
-
-          <!-- Nido Todas las Edades -->
-          <div class="timeline__circle-container">
-            <div class="timeline__message">
-              <p class="noselect">Click edit button to change this text.</p>
-              <span class="timeline__message-tail"></span>
-            </div>
-            <div class="timeline__circle timeline__circle__todas-las-edades" data-age="10">
-              <p class="noselect">Click edit button to change this text.</p>
             </div>
           </div>
         </div>

@@ -34,13 +34,13 @@ body {
   width: 20vw;
 }
 
-.leche-nido-widget__texts h3 {
+.leche-nido-widget__texts-h3 {
   font-size: 24px;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 
-.leche-nido-widget__texts p {
+.leche-nido-widget__texts-p {
   font-size: 20px;
 }
 
@@ -56,7 +56,7 @@ body {
   padding: 40px 0;
 }
 
-.timeline__span-container span {
+.timeline__span-container > span {
   background-color: white;
   border: 4px solid brown;
   border-radius: 8px;
@@ -130,8 +130,7 @@ body {
   width: 20px;
 }
 
-.timeline__line,
-.timeline__dot {
+.timeline__line {
   background-color: rgba(0, 0, 0, 0.2);
   margin: 0 16px;
 }
@@ -152,23 +151,11 @@ body {
 }
 
 .timeline__circle {
+  background-color: black;
   border-radius: 50%;
   cursor: pointer;
   height: 24px;
   width: 24px;
-  /* transition: all 300ms; */
-}
-
-/* .timeline__circle:hover {
-  border: 4px solid rgba(0, 0, 0, 0.25);
-  outline-offset: 4px;
-} */
-
-.timeline__circle__small {
-  border-radius: 50%;
-  cursor: pointer;
-  height: 16px;
-  width: 16px;
 }
 
 .timeline__circle > p {
@@ -184,48 +171,8 @@ body {
   width: 100px;
 }
 
-.timeline__circle__nido-etapa-1 {
-  background-color: #e03130;
-}
-
-.timeline__circle__nido-etapa-1 > p > span {
-  color: red !important;
-}
-
-.timeline__circle__nido-etapa-3 {
-  background-color: #299f3f;
-}
-
-.timeline__circle__nido-etapa-3 > p > span {
-  color: #299f3f !important;
-}
-
-.timeline__circle__nido-etapa-5 {
-  background-color: #328bcd;
-}
-
-.timeline__circle__nido-etapa-5 > p > span {
-  color: #328bcd !important;
-}
-
-.timeline__circle__etapa-escolar {
-  background-color: orange;
-}
-
-.timeline__circle__etapa-escolar > p {
-  width: 128px;
-}
-
-.timeline__circle__etapa-escolar > p > span {
-  color: orange !important;
-}
-
-.timeline__circle__todas-las-edades {
-  background-color: white;
-  margin-left: 16px;
-}
-
 .timeline__dot {
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
   height: 12px;
   width: 12px;
