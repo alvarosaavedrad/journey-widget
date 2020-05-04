@@ -19,7 +19,3 @@ Files used by backend:
 - HTML `src/index.html`
 - JavaScript `src/js/index.js`
 - CSS `src/css/bundle.css`
-
-### Content Manager
-
-Widget texts should be added by using the `content` object at the begining of `src/js/index.js` file.
