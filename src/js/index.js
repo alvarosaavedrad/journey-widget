@@ -10,14 +10,6 @@
   const content = {
     title: "¡Mamá!",
     subtitle: "Selecciona la edad de tu hijo y encuentra la Leche NIDO que es para él.",
-
-    "floating-message": "Por su edad debe tomar",
-
-    "label-nido-etapa-1": "1+ (1 a 3 años)",
-    "label-nido-etapa-3": "3+ (3 a 5 años)",
-    "label-nido-etapa-5": "5+ (5 a 7 años)",
-    "label-nido-etapa-escolar": "ETAPA ESCOLAR (7 a más años)",
-    "label-nido-todas-las-edades": "TODAS LAS EDADES",
   };
 
   /**
@@ -30,7 +22,6 @@
       texts: document.querySelector(".leche-nido-widget__texts"),
       timeline: {
         main: document.querySelector(".leche-nido-widget__timeline"),
-        message: `<div class="timeline__message"><p class="noselect">${content["floating-message"]}</p><span class="timeline__message-tail"></span></div>`,
         spanContainer: document.querySelector(".timeline__span-container"),
         list: document.querySelector(".timeline__list"),
         timeline: document.querySelector(".timeline__main"),
@@ -92,14 +83,8 @@
     const type = age === 2 || age === 4 || age === 6 ? "small" : "main";
 
     if (view.lecheNido.timeline.circles[selected][type]) {
-      const msg = view.lecheNido.timeline.circles[selected][type].parentElement.querySelector(".timeline__message");
-
-      if (!msg) {
-        view.lecheNido.timeline.circles[selected][type].parentElement.insertAdjacentHTML(
-          "afterbegin",
-          view.lecheNido.timeline.message
-        );
-      }
+      view.lecheNido.timeline.circles[selected][type].parentElement.querySelector(".timeline__message").style.display =
+        "block";
     }
   };
 
@@ -136,7 +121,7 @@
 
         if (key !== selected || (key === selected && subkey !== type)) {
           if (msg) {
-            msg.parentElement.removeChild(msg);
+            msg.style.display = "none";
           }
         }
       });
@@ -177,6 +162,15 @@
       li.addEventListener("click", listItemOnClick);
     });
 
+    // Messages
+    /*const allMessages = Array.from(document.querySelectorAll(".timeline__message"));
+
+    allMessages.forEach((msg, index) => {
+      if (index > 0) {
+        msg.style.display = "none";
+      }
+    });*/
+
     // Timeline circles
     const standardCircles = Array.from(document.querySelectorAll(".timeline__circle"));
     const smallCircles = Array.from(document.querySelectorAll(".timeline__circle__small"));
@@ -192,8 +186,6 @@
 
     view.lecheNido.texts.querySelector("h3").textContent = content.title;
     view.lecheNido.texts.querySelector("p").textContent = content.subtitle;
-    document.querySelector(".timeline__circle__todas-las-edades p").textContent =
-      content["label-nido-todas-las-edades"];
 
     /**
      * Setting up message at init
