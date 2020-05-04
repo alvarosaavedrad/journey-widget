@@ -1,6 +1,6 @@
 # 🥛 Leche NIDO Widget 🥛 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-## ✅ Version 1.0.0
+### ✅ Version 1.0.0
 
 ## 🔖 Description
 
