@@ -10,7 +10,7 @@ Widget main object in DOM (`leche-nido-widget`) will show selected product by th
 
 ### Required files
 
-Use `npm run bundle:sass` command in root directory to generate the stylesheet in case you modify something in `style.css` or `list-items.sass`.
+Use `npm run bundle:stylesheets` command in root directory to generate the stylesheet in case you modify something in `style.css` or `list-items.sass`.
 
 Files used by backend:
 
