@@ -1,7 +1,7 @@
 {
   "name": "leche-nido-widget",
-  "version": "0.1.0",
-  "description": "Custom widget for Leche NIDO project made with Vanilla JavaScript",
+  "version": "1.0.0",
+  "description": "Custom widget for Leche NIDO project made with Vanilla JavaScript.",
   "main": "index.js",
   "scripts": {
     "bundle:stylesheets": "sass ./src/sass/list-items.sass ./src/css/build/list-items.css && cat ./src/css/style.css ./src/css/build/list-items.css > ./src/css/bundle.css"
