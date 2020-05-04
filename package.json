@@ -4,7 +4,7 @@
   "description": "Custom widget for Leche NIDO project made with Vanilla JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle:sass": "sass ./src/sass/list-items.sass ./src/css/build/list-items.css && cat ./src/css/style.css ./src/css/build/list-items.css > ./src/css/bundle.css"
   },
   "repository": {
     "type": "git",
