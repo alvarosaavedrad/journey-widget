@@ -16,7 +16,7 @@ body {
 }
 
 /* Widget */
-.leche-nido-widget__container__home {
+.journey-widget__container {
   background-color: #fef200;
   display: flex;
   flex-direction: row;
@@ -28,24 +28,24 @@ body {
 }
 
 /* Texts */
-.leche-nido-widget__texts {
+.journey-widget__texts {
   color: #000;
   padding: 32px 0;
   width: 20vw;
 }
 
-.leche-nido-widget__texts-h3 {
+.journey-widget__texts-h3 {
   font-size: 24px;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 
-.leche-nido-widget__texts-p {
+.journey-widget__texts-p {
   font-size: 20px;
 }
 
 /* Timeline */
-.leche-nido-widget__timeline {
+.journey-widget__timeline {
   display: flex;
   flex-direction: row;
   width: 80vw;

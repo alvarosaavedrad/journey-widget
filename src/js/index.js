@@ -1,41 +1,18 @@
 /**
- * Leche NIDO Widget
+ * Journey Widget
  */
 
 $(document).ready(function () {
   /**
-   * View
+   * Controllers
    */
 
-  const view = {
-    timeline: {
-      circles: $(".timeline__circle"),
-    },
+  const circleOnClick = (e, data) => {
+    selectContent(e.target.dataset.relationship, data);
   };
 
-  /**
-   * - Global -
-   * Adding 'lecheNido' to browser window object
-   * to allow global access to 'currentSelected'
-   */
-
-  window.lecheNido = {
-    widget: {
-      currentSelected: "",
-    },
-  };
-
-  /**
-   * Controller
-   */
-
-  const circleOnClick = (e) => {
-    // Getting dot relationship
-    selectContent(e.target.dataset.relationship);
-  };
-
-  const messageVisibility = (relationship) => {
-    view.timeline.circles.each(function () {
+  const messageVisibility = (relationship, data) => {
+    data.circles.each(function () {
       const r = $(this).data("relationship").toString();
       const msg = $(this).siblings(".timeline__message");
 
@@ -49,37 +26,66 @@ $(document).ready(function () {
     });
   };
 
-  const listItemOnClick = (e) => {
-    // Getting age and parsing
-    selectContent(e.target.dataset.relationship);
+  const listItemOnClick = (e, data) => {
+    selectContent(e.target.dataset.relationship, data);
   };
 
-  const selectContent = (relationship) => {
+  const selectContent = (relationship, data) => {
     // Set span
-    $(".timeline__span-container span").text(relationship);
+    $(data.prefix + ".timeline__span-container span").text(relationship);
 
     // Show message over selected circle
-    messageVisibility(relationship);
+    messageVisibility(relationship, data);
 
-    // Setting currentSelected in dataset attribute
-    $("#leche-nido-widget").data("currentSelected", relationship);
+    // Setting up current selected dot
+    data.currentSelected = relationship;
 
-    // Setting currentSelected in global window object
-    window.lecheNido.widget.currentSelected = relationship;
+    // Dispatch event
+    data.dispatch();
   };
 
   /**
    * Init
    */
-  (function () {
+
+  $(".journey-widget__container").each(function () {
+    /**
+     * Setting up data
+     */
+    const id = $(this).parent().parent().data("id");
+    const prefix = ".elementor-element-" + id + " ";
+    const circles = $(prefix + ".timeline__circle");
+
+    const data = {
+      id,
+      prefix,
+      circles,
+      dispatch: function () {
+        window.dispatchEvent(event);
+      },
+    };
+
+    /**
+     * Custom event to send widget data all along the website
+     */
+    const event = new CustomEvent("journeyWidget", { detail: data });
+
+    /**
+     * Events
+     */
+
     // List items
-    $(".timeline__list li").each(function () {
-      $(this).on("click", listItemOnClick);
+    $(prefix + ".timeline__list li").each(function () {
+      $(this).on("click", function (e) {
+        listItemOnClick(e, data);
+      });
     });
 
     // Timeline circles
-    view.timeline.circles.each(function () {
-      $(this).on("click", circleOnClick);
+    circles.each(function () {
+      $(this).on("click", function (e) {
+        circleOnClick(e, data);
+      });
     });
-  })();
+  });
 });
