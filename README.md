@@ -1,14 +1,24 @@
-# 🥛 Leche NIDO Widget 🥛 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+# 🚀 Journey Widget 🚀 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 ### ✅ Version 1.1.0
 
 ## 🔖 Description
 
-Widget made with Vanilla JavaScript to be imported into Leche NIDO website.
+Widget made with jQuery to be imported in websites from Elementor.
 
 ## 📖 How-to
 
-Floating message will be shown over dot which `relationship` attribute value equals list-item `relationship` attribute value. `lecheNido` object has been added to browser global `window` object in order to set the correct one in other component.
+Once the widget is added other components may subscribe to a `window` event called `journeyWidget`. Every time this event is dispatched it shares an object which has info about the current state of the used widget. This object can be found in `e.detail.data`. This is how you should subscribe to it:
+
+```
+[...]
+// Print widget status everytime you select a different dot
+window.addEventListener(function (e) {
+  console.log(e.detail.data);
+});
+```
+
+You could use jQuery instead.
 
 ### Required files
 
