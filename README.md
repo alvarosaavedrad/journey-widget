@@ -13,7 +13,7 @@ Once the widget is added other components may subscribe to a `window` event call
 This is how you should subscribe to it:
 
 ```
-window.addEventListener(function (e) {
+window.addEventListener("journeyWidget", function (e) {
   console.log(e.detail.data);
   [...]
 });
