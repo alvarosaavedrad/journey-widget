@@ -19,7 +19,7 @@ window.addEventListener("journeyWidget", function (e) {
 });
 ```
 
-You could use jQuery instead.
+You could use jQuery instead of Vanilla JavaScript.
 
 For more information about custom events in JavaScript, please check [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events).
 
