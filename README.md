@@ -21,6 +21,8 @@ window.addEventListener(function (e) {
 
 You could use jQuery instead.
 
+For more information about custom events in JavaScript, please check [Mozilla Documentation](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events).
+
 ### Required files
 
 Use `npm run bundle:stylesheets` command in root directory to generate the stylesheet in case you modify something in `style.css` or `list-items.sass`.
