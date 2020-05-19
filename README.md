@@ -8,13 +8,14 @@ Widget made with jQuery to be imported in websites from Elementor.
 
 ## 📖 How-to
 
-Once the widget is added other components may subscribe to a `window` event called `journeyWidget`. Every time this event is dispatched it shares an object which has info about the current state of the used widget. This object can be found in `e.detail.data`. This is how you should subscribe to it:
+Once the widget is added other components may subscribe to a `window` event called `journeyWidget`. Every time this event is dispatched it shares an object which has info about the current state of the used widget. This object can be found in `e.detail.data`.
+
+This is how you should subscribe to it:
 
 ```
-[...]
-// Print widget status everytime you select a different dot
 window.addEventListener(function (e) {
   console.log(e.detail.data);
+  [...]
 });
 ```
 
