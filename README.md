@@ -1,6 +1,6 @@
 # 🚀 Journey Widget 🚀 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-### ✅ Version 1.1.0
+### ✅ Version 2.0
 
 ## 🔖 Description
 
