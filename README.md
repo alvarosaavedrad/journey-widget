@@ -32,3 +32,7 @@ Files used by backend:
 - HTML `src/index.html`
 - JavaScript `src/js/index.js`
 - CSS `src/css/bundle.css`
+
+## 🗺️ Roadmap
+
+- Not creating custom event inside the loop.
