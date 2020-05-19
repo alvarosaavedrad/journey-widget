@@ -1,18 +1,18 @@
 {
-  "name": "leche-nido-widget",
-  "version": "1.1.0",
-  "description": "Custom widget for Leche NIDO project made with Vanilla JavaScript.",
+  "name": "journey-widget",
+  "version": "2.0",
+  "description": "Widget made with jQuery to be imported in websites from Elementor.",
   "main": "index.js",
   "scripts": {
     "bundle:stylesheets": "sass ./src/sass/list-items.sass ./src/css/build/list-items.css && cat ./src/css/style.css ./src/css/build/list-items.css > ./src/css/bundle.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alvarosaavedrad/leche-nido-widget.git"
+    "url": "git+https://github.com/alvarosaavedrad/journey-widget.git"
   },
   "author": "Álvaro Saavedra",
   "bugs": {
-    "url": "https://github.com/alvarosaavedrad/leche-nido-widget/issues"
+    "url": "https://github.com/alvarosaavedrad/journey-widget/issues"
   },
-  "homepage": "https://github.com/alvarosaavedrad/leche-nido-widget#readme"
+  "homepage": "https://github.com/alvarosaavedrad/journey-widget#readme"
 }
